@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserDataTest {
-    
+
     @Test
     void testSuccessfulLogin() {
         UserData user = new UserData(1234, 8766);
@@ -22,7 +22,7 @@ class UserDataTest {
     @Test
     void testAssertions() {
         UserData user = new UserData(9999, 1);
-        Exception exception = assertThrows(AssertionError.class, user::login);
+        AssertionError exception = assertThrows(AssertionError.class, user::login);
         assertEquals("Password harus 4 digit", exception.getMessage());
     }
 
@@ -37,4 +37,5 @@ class UserDataTest {
             assertEquals(1234, ex.getUserid());
         }
     }
+
 }
